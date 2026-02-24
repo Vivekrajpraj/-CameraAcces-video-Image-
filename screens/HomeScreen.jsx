@@ -44,7 +44,6 @@ function HomeScreen() {
     setIsRecording(true);
     setRecordTime(0);
 
-    // ⏱️ timer start
     timerRef.current = setInterval(() => {
       setRecordTime(prev => prev + 1);
     }, 1000);
@@ -159,6 +158,9 @@ function HomeScreen() {
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setShowCamera(true)}>
             <Text style={{ fontSize: 18 }}>Click Image</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('AudioScreen')}>
+            <Text style={{ fontSize: 18 }}> Audio Record</Text>
           </TouchableOpacity>
         </View>
       )}
